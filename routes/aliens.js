@@ -6,7 +6,7 @@ router.get('/', async(req, res, next)=> {
     try {
         const aliens = await Alien.find()
         res.json(aliens)
-        res.sendStatus(200).send("OK")
+        res.sendStatus(200)
     } catch (error) {
         res.send("Error fetching data")
     }
@@ -21,7 +21,7 @@ router.post('/', async(req, res, next)=> {
         })
         const savedAlien = await alien.save()
         res.json(savedAlien)
-        res.sendStatus(201).send("OK")
+        res.sendStatus(201)
     } catch (error) {
         res.send("Error saving data")
     }
